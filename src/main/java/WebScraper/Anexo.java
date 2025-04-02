@@ -36,11 +36,11 @@ public class Anexo {
     }
     private File downloadFile(String link) {
         try {
-            File downloadsDir = new File("Downloads");
+            File downloadsDir = new File("Resources");
             if (!downloadsDir.exists()) {
                 downloadsDir.mkdirs();
             }
-            File outFile = new File(downloadsDir, name);
+            File outFile = new File(downloadsDir, name + ".pdf");
 
             try (InputStream in = new URL(link).openStream();
                  FileOutputStream fos = new FileOutputStream(outFile)) {

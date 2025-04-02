@@ -32,8 +32,8 @@ public class AnexoTest {
         pageLink = "https://www.gov.br/ans/pt-br/acesso-a-informacao/participacao-da-sociedade/atualizacao-do-rol-de-procedimentos";
         anexo1Link = "https://www.gov.br/ans/pt-br/acesso-a-informacao/participacao-da-sociedade/atualizacao-do-rol-de-procedimentos/Anexo_I_Rol_2021RN_465.2021_RN627L.2024.pdf";
         anexo2Link = "https://www.gov.br/ans/pt-br/acesso-a-informacao/participacao-da-sociedade/atualizacao-do-rol-de-procedimentos/Anexo_II_DUT_2021_RN_465.2021_RN628.2025_RN629.2025.pdf";
-        downloadedFile1 = new File("Downloads/Anexo_I_Rol_2021RN_465.2021_RN627L.2024");
-        downloadedFile2 = new File("Downloads/Anexo_II_DUT_2021_RN_465.2021_RN628.2025_RN629.2025");
+        downloadedFile1 = new File("Downloads/Anexo_I_Rol_2021RN_465.2021_RN627L.2024.pdf");
+        downloadedFile2 = new File("Downloads/Anexo_II_DUT_2021_RN_465.2021_RN628.2025_RN629.2025.pdf");
     }
     @Test
     public void testCreateNameAndPagelink() throws IOException {
