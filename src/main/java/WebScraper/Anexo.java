@@ -8,9 +8,10 @@ public class Anexo {
     private String dowloadLink;
     private File file = null;
 
-    public Anexo(String name, String dowloadLink){
+    public Anexo(String name, String pageLink){
         this.name = name;
-        this.dowloadLink = dowloadLink;
+        this.dowloadLink = getAnexoDowloadLink(pageLink);
+        this.file = downloadFile();
     }
 
     public String getName(){
