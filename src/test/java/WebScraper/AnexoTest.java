@@ -42,17 +42,14 @@ public class AnexoTest {
         assertEquals(anexo1.getName(), anexo1Name);
         assertEquals(anexo2.getName(), anexo2Name);
 
-        assertTrue(anexo1.getDowloadLink().endsWith(anexo1Name));
-        assertTrue(anexo2.getDowloadLink().endsWith(anexo2Name));
-
-        assertTrue(anexo1.getDownloadLink().endsWith(anexo1Name));
-        assertTrue(anexo2.getDownloadLink().endsWith(anexo2Name));
+        assertTrue(anexo1.getDownloadLink().endsWith(anexo1Name + ".pdf"));
+        assertTrue(anexo2.getDownloadLink().endsWith(anexo2Name + ".pdf"));
 
         File anexo1File = anexo1.getFile();
         File anexo2File = anexo2.getFile();
 
-        areFilesEqual(anexo1File, downloadedFile1);
-        areFilesEqual(anexo2File, downloadedFile2);
+        assertTrue(areFilesEqual(anexo1File, downloadedFile1));
+        assertTrue(areFilesEqual(anexo2File, downloadedFile2));
     }
     private static boolean areFilesEqual(File file1, File file2) throws IOException {
         if (file1.length() != file2.length()) {
