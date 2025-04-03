@@ -14,7 +14,6 @@ public class SheetTest {
 
     private Sheet sheet;
     private final String nome = "Anexo_I_Rol_2021RN_465.2021_RN627L.2024.xlsx";
-    private final String destino = "Resources";
     private File sheetFile;
 
     @Before
