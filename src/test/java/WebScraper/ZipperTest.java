@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Arrays;
 
 import static org.junit.Assert.*;
@@ -20,7 +21,7 @@ public class ZipperTest {
     private File zipFile;
 
     @Before
-    public void setUp() {
+    public void setUp() throws IOException {
         String anexo1Name = "Anexo_I_Rol_2021RN_465.2021_RN627L.2024";
         String anexo2Name = "Anexo_II_DUT_2021_RN_465.2021_RN628.2025_RN629.2025";
         String pageLink = "https://www.gov.br/ans/pt-br/acesso-a-informacao/participacao-da-sociedade/atualizacao-do-rol-de-procedimentos";

@@ -1,4 +1,4 @@
-package main.java.WebScraper;
+package main.java.DataTransforming;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -6,43 +6,35 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 
-public class Anexo {
+public class Sheet {
 
     private final String name;
-    private final String dowloadLink;
-    private File file = null;
+    private final String downloadlink;
+    private File XlsxFile = null;
 
-    public Anexo(String name, String pageLink) throws IOException {
+    public Sheet(String name, String link) throws IOException {
         this.name = name;
-        this.dowloadLink = getAnexoDowloadLink(pageLink);
-        this.file = downloadFile();
+        this.downloadlink = getAnexoDowloadLink(link);
+        this.XlsxFile = downloadSheet();
     }
 
-    public String getName(){
-        return this.name;
-    }
-    public String getDownloadLink(){
-        return this.dowloadLink;
-    }
     private String getAnexoDowloadLink(String pageLink){
         if (pageLink.endsWith("/")) {
-            return pageLink + name + ".pdf";
+            return pageLink + name;
         } else {
-            return pageLink + "/" + name + ".pdf";
+            return pageLink + "/" + name;
         }
     }
-    public File getFile(){
-        return this.file;
-    }
-    private File downloadFile() throws IOException  {
+
+    public File downloadSheet() throws IOException {
         try {
             File downloadsDir = new File("Resources");
             if (!downloadsDir.exists()) {
                 downloadsDir.mkdirs();
             }
-            File outFile = new File(downloadsDir, name + ".pdf");
+            File outFile = new File(downloadsDir, name);
 
-            try (InputStream in = new URL(dowloadLink).openStream();
+            try (InputStream in = new URL(downloadlink).openStream();
                  FileOutputStream fos = new FileOutputStream(outFile)) {
                 byte[] buffer = new byte[8192];
                 int bytesRead;
@@ -57,4 +49,17 @@ public class Anexo {
             return null;
         }
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getLink() {
+        return downloadlink;
+    }
+
+    public File getXlsFile() {
+        return this.XlsxFile;
+    }
 }
+
