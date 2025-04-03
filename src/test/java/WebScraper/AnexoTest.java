@@ -12,6 +12,7 @@ import java.nio.file.Files;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import static test.java.AssertFilesEqual.assertFilesEqual;
 
 public class AnexoTest {
 
@@ -48,14 +49,9 @@ public class AnexoTest {
         File anexo1File = anexo1.getFile();
         File anexo2File = anexo2.getFile();
 
-        assertTrue(areFilesEqual(anexo1File, downloadedFile1));
-        assertTrue(areFilesEqual(anexo2File, downloadedFile2));
+        assertFilesEqual(anexo1File, downloadedFile1);
+        assertFilesEqual(anexo2File, downloadedFile2);
     }
-    private static boolean areFilesEqual(File file1, File file2) throws IOException {
-        if (file1.length() != file2.length()) {
-            return false;
-        }
-        return Files.mismatch(file1.toPath(), file2.toPath()) == -1;
-    }
+
 
 }
