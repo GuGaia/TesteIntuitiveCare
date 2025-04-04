@@ -1,4 +1,4 @@
-# Projeto Java na branch Mater, Servidor python com frontend na Branch Main
+# Projeto Java na branch Master, Servidor python com frontend na Branch Main
 # Projeto Java - Processamento de Dados da ANS
 
 Este projeto Java realiza o processamento de arquivos de dados da ANS, como:
