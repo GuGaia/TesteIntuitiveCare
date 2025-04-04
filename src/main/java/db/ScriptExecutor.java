@@ -56,7 +56,7 @@ public class ScriptExecutor {
     }
 
     private static void importarOperadoras() throws Exception {
-        String caminhoOperadoras = "C:\\Users\\gugai\\Downloads\\projetos_ans\\operadoras.csv";  // caminho real
+        String caminhoOperadoras = "C:\\Users\\gugai\\Downloads\\projetos_ans\\operadoras.csv";
 
         String sqlImportOperadoras =
                 "LOAD DATA LOCAL INFILE '" + caminhoOperadoras.replace("\\", "\\\\") + "' " +
@@ -73,7 +73,7 @@ public class ScriptExecutor {
     }
 
     private static void importarDemonstracoes() throws Exception {
-        String caminhoDemonstracoes = "C:\\Users\\gugai\\Downloads\\projetos_ans\\desmonstrações.csv";  // caminho real
+        String caminhoDemonstracoes = "C:\\Users\\gugai\\Downloads\\projetos_ans\\desmonstrações.csv";
 
         String sqlImportDemonstracoes =
                 "LOAD DATA LOCAL INFILE '" + caminhoDemonstracoes.replace("\\", "\\\\") + "' " +
