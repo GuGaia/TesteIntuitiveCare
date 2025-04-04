@@ -1,0 +1,35 @@
+{
+	"info": {
+		"_postman_id": "d27b3591-31d9-4bc1-bf35-92798073cf46",
+		"name": "Operadoras API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43770459"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8000/buscar-operadora?q=saude",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/buscar-operadora?q=saude",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"buscar-operadora"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "saude"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
