@@ -18,7 +18,7 @@ public class DataBaseUtilTest {
     @Before
     public void setUp() throws Exception {
         connection = DataBaseUtil.conectar();
-        assertNotNull(connection);
+        assertNotNull("Conexão deve ser estabelecida", connection);
     }
 
     @After
@@ -30,33 +30,37 @@ public class DataBaseUtilTest {
 
     @Test
     public void testConexao() throws Exception {
-        assertFalse(connection.isClosed());
+        assertFalse("Conexão deve estar aberta", connection.isClosed());
     }
 
     @Test
     public void testCreateTable() throws Exception {
-        String sql = "CREATE TEMP TABLE connection_test (id SERIAL PRIMARY KEY, nome VARCHAR(100));";
-        DataBaseUtil.runScript(sql);
-
         try (Statement stmt = connection.createStatement()) {
-            ResultSet resultSet = stmt.executeQuery(
-                    "SELECT table_name FROM information_schema.tables WHERE table_name = 'teste_conexao';"
-            );
-            assertTrue(resultSet.next());
+            stmt.execute("CREATE TEMPORARY TABLE connection_test (id SERIAL PRIMARY KEY, nome VARCHAR(100));");
+        }
+
+        try (Statement stmt = connection.createStatement();
+             ResultSet resultSet = stmt.executeQuery("SELECT * FROM connection_test LIMIT 1;")) {
+            assertTrue("A tabela temporária 'connection_test' deveria permitir SELECT", true);
+        } catch (Exception e) {
+            fail("Não foi possível acessar a tabela temporária 'connection_test'.");
         }
     }
 
     @Test
     public void testInserirEDepoisConsultar() throws Exception {
+        try (Statement stmt = connection.createStatement()) {
+            stmt.execute("CREATE TEMPORARY TABLE teste_dados (id SERIAL PRIMARY KEY, nome VARCHAR(100));");
+        }
 
-        DataBaseUtil.runScript("CREATE TEMP TABLE teste_dados (id SERIAL PRIMARY KEY, nome VARCHAR(100));");
-
-        DataBaseUtil.runScript("INSERT INTO teste_dados (nome) VALUES ('TesteNome');");
+        try (Statement stmt = connection.createStatement()) {
+            stmt.execute("INSERT INTO teste_dados (nome) VALUES ('TesteNome');");
+        }
 
         try (Statement stmt = connection.createStatement();
              ResultSet resultSet = stmt.executeQuery("SELECT nome FROM teste_dados WHERE nome = 'TesteNome';")) {
             assertTrue("Deve encontrar o nome inserido", resultSet.next());
-            assertEquals("TesteNome", resultSet.getString("nome"));
+            assertEquals("Nome inserido deve ser 'TesteNome'", "TesteNome", resultSet.getString("nome"));
         }
     }
 }

@@ -6,9 +6,9 @@ import java.sql.Statement;
 
 public class DataBaseUtil {
 
-    private static final String URL = "jdbc:postgresql://localhost:5432/database"; // Ajuste
-    private static final String USUARIO = "user"; // Ajuste
-    private static final String SENHA = "password"; // Ajuste
+    private static final String URL = "jdbc:mysql://localhost:3306/projeto_ans?allowPublicKeyRetrieval=true&useSSL=false&allowLoadLocalInfile=true&serverTimezone=UTC"; // Ajuste
+    private static final String USUARIO = "root"; // Ajuste
+    private static final String SENHA = "root"; // Ajuste
 
     public static Connection conectar() throws Exception {
         return DriverManager.getConnection(URL, USUARIO, SENHA);
