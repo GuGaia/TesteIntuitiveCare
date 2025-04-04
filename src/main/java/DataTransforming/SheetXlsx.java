@@ -6,13 +6,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 
-public class Sheet {
+public class SheetXlsx {
 
     private final String name;
     private final String downloadlink;
     private File XlsxFile = null;
 
-    public Sheet(String name, String link) throws IOException {
+    public SheetXlsx(String name, String link) throws IOException {
         this.name = name;
         this.downloadlink = getAnexoDowloadLink(link);
         this.XlsxFile = downloadSheet();

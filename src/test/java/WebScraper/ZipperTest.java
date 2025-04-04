@@ -19,6 +19,7 @@ public class ZipperTest {
     private File file2;
     private Zipper zipper;
     private File zipFile;
+    private final String path = "Resources/anexosPdf_compactados.zip";
 
     @Before
     public void setUp() throws IOException {
@@ -30,7 +31,7 @@ public class ZipperTest {
         anexo2 = new Anexo(anexo2Name, pageLink);
         file1 = anexo1.getFile();
         file2 = anexo2.getFile();
-        zipper = Zipper.zipping(Arrays.asList(file1, file2));
+        zipper = Zipper.zipping(Arrays.asList(file1, file2), path);
     }
 
     @Test

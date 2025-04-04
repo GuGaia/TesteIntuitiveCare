@@ -10,5 +10,9 @@
     <orderEntry type="library" name="junit" level="project" />
     <orderEntry type="library" name="commons.io" level="project" />
     <orderEntry type="library" name="apache.commons.compress" level="project" />
+    <orderEntry type="library" name="apache.poi" level="project" />
+    <orderEntry type="library" name="apache.poi.ooxml" level="project" />
+    <orderEntry type="library" name="postgresql" level="project" />
+    <orderEntry type="library" name="mysql.connector.java" level="project" />
   </component>
 </module>

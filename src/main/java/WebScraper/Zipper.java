@@ -7,16 +7,17 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 public class Zipper {
-    private final String outputZipPath = "Resources/anexos_compactados.zip";;
+    private final String outputZipPath;
     private List<File> files;
     private File zipFile;
 
-    private Zipper(List<File> files){
+    private Zipper(List<File> files, String path){
         this.files = files;
+        this.outputZipPath = path;
         this.zipFile = new File(outputZipPath);
     }
-    public static Zipper zipping(List<File> files){
-        Zipper zipper = new Zipper(files);
+    public static Zipper zipping(List<File> files, String path){
+        Zipper zipper = new Zipper(files, path);
         return zipper;
     }
     public void zipFiles() throws IOException {
