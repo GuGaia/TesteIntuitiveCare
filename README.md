@@ -8,6 +8,7 @@ Este projeto disponibiliza uma API e uma interface web para buscar operadoras de
 ## Link para o Postman
 
 https://gustavogaia.postman.co/workspace/My-Workspace~2cd32c10-024a-4e15-83b0-8496621247b0/request/43770459-ad9db06a-78bf-4bc2-8ae0-8b7682ea5704?action=share&creator=43770459&ctx=documentation
+- Exemplo de pesquisa com a palavra saude pelo postman adicionado ao repositorio em formato json
 
 ## Tecnologias Utilizadas
 
