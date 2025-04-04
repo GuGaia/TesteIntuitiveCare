@@ -31,7 +31,7 @@ Este projeto disponibiliza uma API e uma interface web para buscar operadoras de
 - python -m uvicorn main:app --reload --host 0.0.0.0 --port 8000
 - O backend estará disponível em: http://localhost:8000
 
-###3. Frontend (Vue.js)
+### 3. Frontend (Vue.js)
 - cd ../frontend
 - npm install
 - npm run serve
